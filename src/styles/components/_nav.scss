@@ -1,0 +1,86 @@
+.ul-desktop {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 250px;
+  right: 0px;
+  top: 50%;
+  width: 164px;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  background-color: transparent;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: all ease-in-out 0.5s;
+  opacity: 1;
+  @media screen and(max-width: 425px) {
+    display: none;
+  }
+
+  li {
+    a {
+      cursor: pointer;
+
+      i {
+        letter-spacing: 1.5px;
+        font-weight: normal;
+        font-size: 24px;
+        transition: all ease-in-out 0.3s;
+
+        &:hover {
+          color: $color-secondary;
+          text-shadow: 0px 0px 7px rgba($color: $color-secondary, $alpha: 1);
+          transition: all ease-in-out 0.3s;
+        }
+      }
+    }
+    .show {
+      visibility: visible;
+      animation-name: nav-moov;
+      animation-duration: 0.6s;
+      animation-iteration-count: ease in out;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      opacity: 0;
+    }
+  }
+  .nav-activ h3 {
+    color: $color-secondary;
+    text-shadow: 0px 0px 7px rgba($color: $color-secondary, $alpha: 1);
+    transition: all ease-in-out 0.3s;
+  }
+  .test-activ i {
+    color: $color-secondary;
+    text-shadow: 0px 0px 7px rgba($color: $color-secondary, $alpha: 1);
+    transition: all ease-in-out 0.3s;
+  }
+}
+
+// .show {
+//   visibility: visible;
+//   animation-name: nav-moov;
+//   animation-duration: 0.6s;
+//   animation-iteration-count: ease in out;
+//   animation-timing-function: linear;
+//   animation-fill-mode: forwards;
+//   opacity: 0;
+// }
+
+.bar {
+  right: 90%;
+  animation-delay: 0ms;
+}
+.bar2 {
+  right: 60%;
+  animation-delay: 200ms;
+}
+.bar3 {
+  right: 36%;
+  animation-delay: 400ms;
+}
+.bar4 {
+  right: 10%;
+  animation-delay: 600ms;
+}

@@ -1,0 +1,168 @@
+.main-project {
+  overflow-y: auto;
+  scroll-snap-type: none;
+  .projects {
+    @media screen and(max-width: 425px) {
+      height: auto;
+      margin-bottom: 60px;
+      padding-bottom: 64px;
+    }
+    .projects-p {
+      margin-top: 64px;
+      font-size: 1.5em;
+      // padding-left: 128px;
+      position: relative;
+      font-family: $font-main;
+      @media screen and(max-width: 425px) {
+        margin-top: 32px;
+      }
+      &::after {
+        content: "<p>";
+        position: absolute;
+        font-family: $font-secondary;
+        color: #515152;
+        font-size: 25px;
+        top: -25px;
+        left: -15px;
+        font-weight: lighter;
+      }
+      &::before {
+        content: "</p>";
+        position: absolute;
+        font-family: $font-secondary;
+        color: #515152;
+        font-size: 25px;
+        bottom: -35px;
+        left: -15px;
+        font-weight: lighter;
+      }
+    }
+
+    .projects-container {
+      display: flex;
+      width: fit-content;
+      border-top: none;
+      flex-direction: row;
+      // border: 1px solid red;
+      // max-width: 700px;
+      margin: auto;
+      margin-top: 64px;
+      @media screen and(max-width: 425px) {
+        margin-top: 64px;
+        flex-direction: column;
+        height: 615px;
+        margin-left: 0;
+        width: 100%;
+        margin-right: 0;
+      }
+      .cards1-3,
+      .cards4-6 {
+        width: fit-content;
+        height: 100%;
+        display: flex;
+        @media screen and(max-width: 425px) {
+          // margin-bottom: 35px;
+          width: 100%;
+          height: 282px;
+          justify-content: space-between;
+        }
+
+        .card-parent-project {
+          width: 70px;
+          height: 80%;
+          overflow: hidden;
+          transition: all 0.3s;
+          position: relative;
+          cursor: pointer;
+          margin-right: 16px;
+          @media screen and(max-width: 425px) {
+            margin-right: 0px;
+            height: 100%;
+            width: 22%;
+          }
+          &:hover {
+            transform: scaleY(1.05) scaleX(0.95);
+            transition: all 0.3s;
+          }
+
+          &:hover .card-project {
+            //   transform: scale(2);
+            background-size: 100%;
+            transition: all 0.3s;
+            display: block;
+          }
+          &:hover .card-project:before {
+            width: 100%;
+            transition: all 0.3s;
+          }
+          &:hover .card-project:after {
+            display: block;
+            transition: all 0.4s;
+          }
+          .card-project {
+            background-color: $color-main;
+            // border: 3px solid $color-background;
+            width: 100%;
+            height: 100%;
+            transition: all 0.3s;
+
+            background-position: center;
+            background-size: 400%;
+            background-repeat: no-repeat;
+            @media screen and(max-width: 425px) {
+              background-size: 100%;
+            }
+
+            &::before {
+              content: "";
+              display: block;
+              height: 100%;
+              width: 0%;
+              position: absolute;
+              top: 0;
+              left: 0;
+
+              background-color: $color-background;
+
+              opacity: 0.3;
+              transition: all 0.3s;
+            }
+            &::after {
+              display: none;
+              content: "\f00e";
+              white-space: pre;
+              padding: 8px;
+              // background-color: $color-background;
+              // border: 1px solid $color-secondary;
+              text-shadow: 0px 0px 7px
+                rgba($color: $color-background, $alpha: 1);
+              position: absolute;
+              font-family: "Font Awesome 5 Free";
+              vertical-align: middle;
+              font-weight: 700;
+              font-size: 1.5em;
+              border-radius: 200%;
+              color: $color-secondary;
+              top: 90%;
+              left: 50%;
+              transform: translateX(-50%) translateY(-90%);
+              transition: all 0.4s;
+            }
+          }
+          .labo-t {
+            background-image: url(../../img/projects/labo-t/LOGO-LABO-T-2019.png);
+          }
+          .aDesign {
+            background-image: url(../../img/projects/aDesign/logo1.png);
+          }
+          .groupomania {
+            background-image: url(../../img/projects/groupomania/icon-world-black.png);
+          }
+          .hot-takes {
+            background-image: url(../../img/projects/hot-takes/flame.png);
+          }
+        }
+      }
+    }
+  }
+}

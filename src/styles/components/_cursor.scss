@@ -1,0 +1,39 @@
+// body {
+//     background: rgb(0, 79, 248);
+//     font-family: 'Poppins';
+//     margin: 0;
+//     height: 100vh;
+//     display: grid;
+//     place-items: center;
+//     overflow: hidden;
+// }
+
+svg {
+  width: 80px;
+  position: absolute;
+  animation: rotation 4.5s infinite linear;
+  pointer-events: none;
+  transition: top 0.3s, left 0.3s;
+  transition-timing-function: ease-out;
+  z-index: 100;
+  @media screen and(max-width: 768px) {
+    display: none;
+  }
+}
+
+text {
+  font-size: 5em;
+
+  font-family: $font-main;
+  font-weight: bold;
+  fill: $color-main;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
